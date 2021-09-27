@@ -25,7 +25,15 @@ export default function ArticleIndex(props) {
 
       {props.articles.map((article) => (
         <div key={article.id}>
-          {article.title} - {article.id}
+          <h3>
+            {article.title} - {article.id}
+          </h3>
+          <p>{article.content}</p>
+          <div>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+          <hr />
         </div>
       ))}
     </div>
