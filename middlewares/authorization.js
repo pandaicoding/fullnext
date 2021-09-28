@@ -11,7 +11,7 @@ export default function authorization(req, res) {
 
     if (authType !== "Bearer") return res.status(401).end();
 
-    jwt.verify(authToken, "fullnext", function (err, decoded) {
+    jwt.verify(authToken, process.env.SECRET_JWT, function (err, decoded) {
       if (err) return res.status(401).end();
       return resolve(decoded);
     });

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { unAuthPage } from "../../middlewares/authorizationPage";
+import Link from "next/link";
 
 export async function getServerSideProps(ctx) {
   await unAuthPage(ctx);
@@ -52,8 +53,15 @@ export default function Register() {
         <br />
         <input type="text" name="password" onChange={fieldHandler.bind(this)} placeholder="Password" />
         <br />
+        <br />
         <button type="submit">Register</button>
-        <p>{status}</p>
+        <p>Status: {status}</p>
+        <br />
+        <Link href="/auth/login">
+          <a href="!#">
+            <button>Login</button>
+          </a>
+        </Link>
       </form>
     </div>
   );

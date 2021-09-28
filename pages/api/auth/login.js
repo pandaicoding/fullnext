@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       email: checkUser.email,
       role: checkUser.role,
     },
-    "fullnext",
+    process.env.SECRET_JWT,
     {
       expiresIn: "7d",
     }
