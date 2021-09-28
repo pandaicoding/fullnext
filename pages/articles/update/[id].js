@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { authPage } from "../../../middlewares/authorizationPage";
 import Router from "next/router";
+import Nav from "../../../components/Nav";
 
 export async function getServerSideProps(ctx) {
   const { token } = await authPage(ctx);
@@ -70,6 +71,8 @@ export default function ArticleUpdate(props) {
 
   return (
     <div>
+      <Nav />
+
       <h1>Update a Article</h1>
 
       <form onSubmit={updateHandler.bind(this)}>
